@@ -1,5 +1,9 @@
 simple homepage kinda thing
 
+JSON object schema
+should end up with group of character objects.
+characters have moves, inherited from moveset.
+
 
 marth |> fair
 [both are clickable]
