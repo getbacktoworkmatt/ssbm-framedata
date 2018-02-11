@@ -1,0 +1,22 @@
+simple homepage kinda thing
+
+
+marth |> fair
+[both are clickable]
+
+webm at 60fps (hosted somewhere good) on repeat
+with frame counter
+Can interact to select specific frame
+
+other data like IASA and invincibility and stuff
+
+facebook like reacts, chooes what to show on a particular day with popularity
+
+
+
+
+============================
+---planned features
+-overlay 2+ different items
+-grid on canvas with X/Y so people can figure out what outspaces what
+-facebook like reacts, chooes what to show on a particular day with popularity algo
