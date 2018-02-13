@@ -1,0 +1,33 @@
+:root {
+  --frame-number: 0;
+  /*  TODO: assign length from JSON. fps = 60 so length(s) = (moveFrames/60)/3 */
+  --animation-length: 35/60;
+
+}
+
+h2:before {
+  content: counter(testCounter);
+}
+
+body {
+  background: #24aecd;
+  counter-reset: testCounter;
+}
+
+.animate {
+  width: 192px;
+  height: 138px;
+  margin: 2% auto;
+  /* background: url('https://treehouse-code-samples.s3.amazonaws.com/CSS-DD/codepen/blog/monster.png') left center; */
+  background: url(../visuals/falcon-dair-horizontal.png) left center;
+  /*  playtime at 60fps is steps  */
+  animation: play .583s steps(35) infinite;
+}
+
+@keyframes play {
+   from { background-position:    0px; }
+   to { background-position: -6720px; }
+
+
+    /* 100% { background-position: -1152px; } */
+}
