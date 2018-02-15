@@ -1,0 +1,10 @@
+//Variables depend on what animation is being requested and will be populated from json
+$currentFrame: 0;
+$totalFrames: 35;
+$fps: 60;
+$pixelsPerFrame: 0;     //the amount of pixels traversed by step() on each frame
+//TODO: Assumption: I'll have to have some small css files for each animation. WebPack can help me generate these from my json.
+$playRate: 1/3;
+
+$animation-duration: $totalFrames / $fps / $playRate;
+//length of animation(s) = totalFrames / fps

@@ -1,3 +1,11 @@
+// set up initial variables
+	var c = document.getElementById("canvasAnimation");
+	var ctx = c.getContext("2d");
+  console.log(c);
+  //alert("test");
+
+
+
 new Vue({
   el: '#vue-app',
   data: {
@@ -18,15 +26,23 @@ new Vue({
     },
     changeSpeed: function(speed){
       this.speed = speed;
+    },
+    startStop: function(){
+      //animate.style.webkitAnimationPlayState = "paused";
+      animate.classList.toggle('paused');
+        // $("body").get(0).style.setProperty("--color", "hotpink");
+        //TODO: make this work with something similar to above to edit CSS variable
     }
   },
 
+
   //called automatically on create, gets our character data from API
   created: function(){
-    var _this = this;
-    $.getJSON('http://localhost/apipath', function (json) {
-      this.json = json;
-    })
+
+    // var _this = this;
+    // $.getJSON('http://localhost/apipath', function (json) {
+    //   this.json = json;
+    // })
   }
 
 });

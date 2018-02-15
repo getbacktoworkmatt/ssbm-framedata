@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Melee Frame Data</title>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <link href="style.css" rel="stylesheet" />
+    <link href="scss/test.min.css" rel="stylesheet" />
 
   </head>
   <body>
@@ -21,7 +21,8 @@
       New plan for dealing with 60fps animation - css animations
        -->
       marth>fair
-      <a v-bind:href="marth">marth</a>
+      <!-- <a v-bind:href="marth">marth</a> -->
+      <button v-on:click="startStop">Start/Stop</button>
       <img src="visuals/falcon-dair-horizontal.png"></a>
       Total: 32
       Hit: 10-14
@@ -29,12 +30,13 @@
       Auto cancel: <5 24>
       Landlag: 18 > 9 (Lcancel)
 
-      <div class="animate"></div>
+      <div id="animate" class="animate"></div>
 
-
-
+      <!-- Let's try it with a canvas -->
+      <canvas id="canvasAnimation"></canvas>
 
 
     </div>
+    <script src="app.js"></script>
   </body>
 </html>

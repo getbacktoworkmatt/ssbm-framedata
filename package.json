@@ -1,0 +1,23 @@
+{
+  "name": "ssbmfd",
+  "version": "1.0.0",
+  "description": "A frame data reference for Super Smash Bros. Melee",
+  "main": "index.html",
+  "dependencies": {
+    "node-sass": "^4.7.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getbacktoworkmatt/ssbm-framedata.git"
+  },
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/getbacktoworkmatt/ssbm-framedata/issues"
+  },
+  "homepage": "https://github.com/getbacktoworkmatt/ssbm-framedata#readme"
+}

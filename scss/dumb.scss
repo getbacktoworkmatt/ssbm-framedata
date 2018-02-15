@@ -1,0 +1,11 @@
+//This contains the boilerplate, no fancy stuff
+$width: 192px;
+$height: 138px;
+$spriteSheet: url(../visuals/falcon-dair-horizontal.png);
+
+
+.container {
+  width: $width;
+  height: $height;
+  margin: 2% auto;
+}

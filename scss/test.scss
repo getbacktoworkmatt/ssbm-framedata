@@ -1,9 +1,16 @@
+@import 'vars';
+@import 'dumb'
+
+$playState: running;
+
+
 :root {
   /* TODO: find a way to count frames as well as goto frame. Brain says we should be able to math it */
   --frame-counter: 0;
-  --frame-rate: 60;
+  --frame-rate: $fps;
   --animation-time: 35s;
-  --animation-play-state: running;
+  --animation-time2: $animation-duration;
+  --animation-play-state: $playState;
   /*  TODO: assign stuff from JSON */
   /* --animation-length: var(--frame-rate) / var(--animation-time);
   --spritesheet-width: 6720px;
@@ -32,7 +39,9 @@ body {
   /* background: url('https://treehouse-code-samples.s3.amazonaws.com/CSS-DD/codepen/blog/monster.png') left center; */
   background: url(../visuals/falcon-dair-horizontal.png) left center;
   /*  playtime at 60fps is steps  */
-  animation: play .583s steps(35) infinite;
+  animation: play .583s steps(35)  infinite;
+
+
   animation-play-state: var(--animation-play-state);
 }
 
