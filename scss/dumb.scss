@@ -1,11 +1,76 @@
-//This contains the boilerplate, no fancy stuff
-$width: 192px;
-$height: 138px;
-$spriteSheet: url(../visuals/falcon-dair-horizontal.png);
+@import 'vars';
 
+$spriteSheet: url(../visuals/falcon-dair-horizontal.png);
+$animationLength: 1.7s;
+
+$testVar: 0;
+//for tracking vars in dom
+:root {
+  --test-value: $currentFrame;
+}
+
+@function countdown-numbers($from: 100, $through: 0){
+    $str: ''; @for $i from $from through $through { $str: $str + '#{$i}\A'; } @return $str;
+}
+
+.container2 {
+  width: $spriteWidth;
+  height: $spriteHeight;
+  margin: 2% auto;
+  border: 1px solid black;
+  background: $spriteSheet left center;
+  //animation: play2 $animationLength steps(35) infinite;
+  animation: play2 step-start $animationLength infinite;
+  //--my-frame: 0;
+  counter-reset: fcounter;
+}
 
 .container {
-  width: $width;
-  height: $height;
+  width: $spriteWidth;
+  height: $spriteHeight;
   margin: 2% auto;
+  border: 1px solid black;
+  background: $spriteSheet left center;
+  animation: play $animationLength steps(35) infinite;
+  //animation: play steps($totalFrames) $animationLength infinite;
+
+  &::after {
+    $from   : 100;
+    $through:  51;
+    $time   :  3s;
+    // content: countdown-numbers($from, $through) + 'STOP';  //frame function
+    content: counter(fcounter);
+    animation: countdown $time steps($from - $through + 1) forwards; // create steps (add one for 'stop')
+    display: inline-block;
+    white-space: pre-wrap;
+    color: grey;
+    font-weight: bold;
+    }
+}
+@keyframes countdown {
+    to { transform: translateY(calc(1.2em - 100%)) }
+}
+
+
+//TODO: Feb 15: Keyframes with custom properties are a no-go. Instead we'll re-calculate the current frame by using the background-position property as well as the variables we already have.
+@keyframes play2 {
+  // TODO: for loop to create a 0% -> 100% step for each frame.
+
+  @for $i from 0 through $totalFrames {
+    $percent: $i / $totalFrames * 100%;
+    $currentFrame: $i;
+    #{$percent} {
+      background-position: #{-$spriteWidth * $currentFrame};
+      width: $currentFrame * 10px;
+      counter-increment: fcounter;
+      --my-frame: "" counter(fcounter) "";
+
+
+    }
+  }
+}
+
+@keyframes play {
+   from { background-position:    0px; }
+   to { background-position: #{-$spriteWidth * $totalFrames}}
 }
